@@ -117,10 +117,11 @@ Data dikirim dalam format JSON tiap 1 detik ke topic `weather/anemometer`:
 
 ## 🚀 Status Project
 
-✅ Firmware ESP32 berjalan dan berhasil mengirim data ke EMQX Cloud
-✅ Backend web menerima data real-time via MQTT
-🔲 Penambahan sensor tambahan (suhu, kelembapan, kelembapan tanah) — direncanakan
-🔲 Deployment jangka panjang di lahan sawah
+✅ Firmware ESP32 berjalan dan berhasil mengirim data ke EMQX Cloud <br>
+✅ Backend web menerima data real-time via MQTT<br>
+🔲 Penambahan sensor tambahan (suhu, kelembapan, kelembapan tanah) — direncanakan<br>
+🔲 Deployment jangka panjang di lahan sawah<br>
+
 
 ## 📄 Lisensi
 
