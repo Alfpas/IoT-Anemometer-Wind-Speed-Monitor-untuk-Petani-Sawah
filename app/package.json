@@ -1,0 +1,9 @@
+{
+  "name": "anemometer-dashboard",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.22.2",
+    "mqtt": "^5.15.2",
+    "socket.io": "^4.8.3"
+  }
+}

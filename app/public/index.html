@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Agriculture - IoT Wind Monitoring</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">🌾 Wind Sensor for Agriculture</div>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#monitoring">Monitoring</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>Empowering Farmers with Smarter Agriculture</h1>
+        <p>Helping farmers make data-driven, cost-effective, and sustainable decisions through real-time farming solutions.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary">Start Monitoring</button>
+          <button class="btn btn-secondary">Get Free Consultation</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-value">500+</span>
+            <span class="stat-label">Farmers Connected</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">98%</span>
+            <span class="stat-label">Uptime Reliability</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">24/7</span>
+            <span class="stat-label">Live Support</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">30+</span>
+            <span class="stat-label">Farm Locations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Monitoring Dashboard -->
+  <section class="monitoring-section" id="monitoring">
+    <div class="container">
+      <div class="monitoring-header">
+        <div>
+          <h2>Real-Time Wind Monitoring</h2>
+          <p class="monitoring-subtitle">A clean overview of current wind conditions and operational reporting.</p>
+        </div>
+        <div class="monitoring-badge">
+          <span>Live update</span>
+        </div>
+      </div>
+
+      <div class="monitoring-layout">
+        <div class="report-panel">
+          <div class="panel-header">
+            <div>
+              <h3>Performance Summary</h3>
+              <span>Tracked over the last 7 days</span>
+            </div>
+            <div class="panel-meta">Current status</div>
+          </div>
+
+          <div class="report-grid">
+            <div class="report-item">
+              <p>Average Wind</p>
+              <strong>6.0 m/s</strong>
+            </div>
+            <div class="report-item">
+              <p>Peak Gust</p>
+              <strong>12.8 m/s</strong>
+            </div>
+            <div class="report-item">
+              <p>Uptime</p>
+              <strong>98%</strong>
+            </div>
+          </div>
+
+          <div class="report-chart">
+            <div class="chart-line"></div>
+            <div class="chart-overlay">
+              <span>Mon</span>
+              <span>Tue</span>
+              <span>Wed</span>
+              <span>Thu</span>
+              <span>Fri</span>
+              <span>Sat</span>
+              <span>Sun</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="live-panel">
+          <div class="live-header">
+            <div>
+              <h3>Live Status</h3>
+              <span>Immediate sensor data</span>
+            </div>
+            <div class="live-status-pill">Stable</div>
+          </div>
+
+          <div class="live-grid">
+            <div class="live-card wind-accent">
+              <p>Wind Speed</p>
+              <strong id="speed">0.00 m/s</strong>
+              <span class="live-note" id="status-wind">Measuring</span>
+            </div>
+            <div class="live-card rpm-accent">
+              <p>RPM</p>
+              <strong id="rpm">0</strong>
+              <span class="live-note" id="status-rpm">Active</span>
+            </div>
+            <div class="live-card pulse-accent">
+              <p>Pulse Count</p>
+              <strong id="pulse">0</strong>
+              <span class="live-note" id="status-pulse">Recording</span>
+            </div>
+            <div class="live-card signal-accent">
+              <p>Signal Status</p>
+              <strong id="signal">Live</strong>
+              <span class="live-note" id="status-signal">Connected</span>
+            </div>
+          </div>
+
+          <div class="insight-box live-insight">
+            <h3>Current Condition</h3>
+            <p id="insight">Waiting for sensor data...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Our Services</h2>
+        <p class="section-subtitle">Practical farming solutions designed to make your operations more reliable, efficient, and data-ready.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🌾</div>
+          <h3>Crop Collection</h3>
+          <p>Advanced field monitoring and crop assessment to keep your harvest on track.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💧</div>
+          <h3>Smart Irrigation</h3>
+          <p>Intelligent water management recommendations based on live environmental data.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛠️</div>
+          <h3>Farm Equipment</h3>
+          <p>Reliable hardware and sensor systems built for real agricultural conditions.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Advisory Support</h3>
+          <p>Practical guidance to help you use sensor insights for better farm decisions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="insights">
+    <div class="container">
+      <div class="section-heading">
+        <h2>What Our Farmers Say</h2>
+        <p class="section-subtitle">Real stories from growers who trust our monitoring and farm support.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-card-inner">
+            <div class="testimonial-content">
+              <span class="testimonial-label">Farmer story</span>
+              <blockquote class="testimonial-quote">"With this system, I can act faster when wind conditions change. It saves time and keeps our crops safer."</blockquote>
+              <p class="testimonial-author"><strong>Budi</strong>, Rice Farmer</p>
+            </div>
+            <div class="testimonial-photo" aria-label="Budi photo">
+              <span>Photo</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card-inner">
+            <div class="testimonial-content">
+              <span class="testimonial-label">Farmer story</span>
+              <blockquote class="testimonial-quote">"The monitoring tools give us confidence in our daily irrigation and crop protection plans."</blockquote>
+              <p class="testimonial-author"><strong>Siti</strong>, Vegetable Farmer</p>
+            </div>
+            <div class="testimonial-photo" aria-label="Siti photo">
+              <span>Photo</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card-inner">
+            <div class="testimonial-content">
+              <span class="testimonial-label">Farmer story</span>
+              <blockquote class="testimonial-quote">"Easy to understand data and reliable alerts make this a great companion for our farm work."</blockquote>
+              <p class="testimonial-author"><strong>Ahmad</strong>, Plantation Manager</p>
+            </div>
+            <div class="testimonial-photo" aria-label="Ahmad photo">
+              <span>Photo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Insights -->
+  <section class="insights" id="contact">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Latest Insights & Tips</h2>
+        <p class="section-subtitle">Short, actionable farm insights to help you plan with confidence.</p>
+      </div>
+      <div class="insights-grid">
+        <article class="insight-card">
+          <div class="insight-image">🌾</div>
+          <h3>Best Use Cases for Wind Monitoring</h3>
+          <p>Learn how wind data can guide crop protection and irrigation timing.</p>
+        </article>
+        <article class="insight-card">
+          <div class="insight-image">🌱</div>
+          <h3>Sustainable Farming Through Technology</h3>
+          <p>Understand how sensors help reduce waste and improve farm efficiency.</p>
+        </article>
+        <article class="insight-card">
+          <div class="insight-image">📈</div>
+          <h3>Increasing Farm Productivity</h3>
+          <p>Use simple data-driven tactics to boost yields and reduce downtime.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>🌾 Smart Agriculture</h3>
+        <p>Empowering farmers with IoT technology and data-driven solutions.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Connect With Us</h4>
+        <div class="social-links">
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Smart Agriculture. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
