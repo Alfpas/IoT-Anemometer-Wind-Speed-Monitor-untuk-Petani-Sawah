@@ -38,7 +38,7 @@ Sistem monitoring kecepatan angin berbasis IoT yang dirancang untuk membantu pet
 | Sensor kecepatan | HC-020K (speed sensor / slotted disc) |
 | Konektivitas | WiFi |
 | Catu daya | Panel surya + baterai |
-| Enclosure | Tiang kayu + housing elektronik |
+| Enclosure | 3d Print |
 
 ![CAD Render Anemometer](render.png)
 
@@ -124,4 +124,10 @@ Data dikirim dalam format JSON tiap 1 detik ke topic `weather/anemometer`:
 
 ## 📄 Lisensi
 
-MIT License
+Proyek ini dilisensikan di bawah **MIT License** — bebas digunakan, dimodifikasi, dan didistribusikan dengan menyertakan kredit.
+
+```
+MIT License © 2026 Alfredo
+```
+
+---
