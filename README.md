@@ -1,4 +1,4 @@
-# 🌬️ IoT Anemometer — Wind Speed Monitor untuk Petani Sawah
+# 🌬️ IoT Anemometer — Wind Speed Monitor untuk Petani di Sawah
 
 Sistem monitoring kecepatan angin berbasis IoT yang dirancang untuk membantu petani sawah memantau kondisi angin di lahan mereka secara real-time. Data dikirim dari sensor di lapangan ke dashboard web melalui MQTT.
 
